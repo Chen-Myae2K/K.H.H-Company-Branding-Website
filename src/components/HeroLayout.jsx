@@ -31,7 +31,7 @@ const HeroLayout = () => {
 
   return (
     <section ref={scrollRef} className="relative h-[300vh] w-full">
-      <div className="sticky top-14 flex h-screen w-full flex-col">
+      <div className="sticky top-14  flex h-screen w-full flex-col">
         <div className="relative h-[70vh] w-full overflow-hidden">
           <div className="absolute inset-0 flex h-full w-full">
             <ImageColumn src={hero1} alt="khh photo" />
@@ -69,16 +69,16 @@ const HeroLayout = () => {
           </div>
         </div>
 
-        <div className="flex h-[20vh] w-[95%] mx-auto pt-5 flex-col justify-between bg-white text-zinc-800">
+        <div className="flex h-[20vh] w-[95%]  mx-auto pt-5 flex-col justify-between bg-white text-zinc-800">
           <div className="flex h-full w-full justify-between">
             <div className="flex flex-col justify-between">
               <div>
-                <p className="font-bold">K.H.H Company Limited</p>
+                <p className="font-bold text-primary">K.H.H Company Limited</p>
               </div>
-              <p className="text-zinc-500">welcome to KHH SECCO-SORB</p>
+              <p className="text-zinc-500">Welcome to KHH SECCO-SORB</p>
             </div>
 
-            <div className="flex flex-col items-end justify-between text-right">
+            <div className="flex flex-col items-end  justify-between text-right">
               <div className="">
                 <a href="#" className="hover:underline">
                   dark / <span className="font-semibold">light</span>
