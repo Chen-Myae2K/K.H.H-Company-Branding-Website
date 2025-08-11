@@ -44,12 +44,14 @@ const Faq = () => {
     },
   ];
   return (
-    <div className="bg-surface mt-20 pb-10 border border-zinc-100">
+    <div className="bg-surface mt-20 pb-10 border border-gray-100">
       <div className="flex flex-col justify-center items-center gap-5 text-center py-10">
-        <h2 className="text-3xl w-2/3">Frequently Asked Questions</h2>
+        <h2 className="text-3xl w-2/3 text-royal">
+          Frequently Asked Questions
+        </h2>
         <p className="max-md:w-3/4 w-1/2 text-gray-800/80 ">
-          Answers to common questions about SkyAgent and its features. If you
-          have any other questions, please don't hesitate to contact us.
+          If you have any other questions, please feel free to reach out to us —
+          our team is always happy to assist you.
         </p>
       </div>
       <div className="w-[95%] md:w-2/3 mx-auto">
