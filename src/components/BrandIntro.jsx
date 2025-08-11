@@ -7,7 +7,6 @@ import logo4 from "../assets/home/logo_4.png";
 import logo5 from "../assets/home/logo_5.png";
 import logo6 from "../assets/home/logo_6.png";
 import {
-  ArrowRight,
   BrickWallFire,
   MoveRight,
   SquareStack,

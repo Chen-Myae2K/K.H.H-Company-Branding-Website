@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import ProductsOverall from "../components/ProductsOverall";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import CertificateDisplay from "@/components/CertificateDisplay";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <HeroSection />
       <BrandIntro />
       <ProductsOverall />
+      <CertificateDisplay />
       <Faq />
       <Footer />
     </main>
