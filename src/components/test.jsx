@@ -64,13 +64,13 @@ const HeroLayout = () => {
 
       {/* SECTION 2: The Navigation Bar */}
       {/* This section has a height of 30dvh and IS sticky. It will stick to the top when you scroll. */}
-      <div className="sticky top-0 z-10 flex h-[30dvh] w-full flex-col justify-between bg-white text-zinc-900">
+      <div className="sticky top-0 z-10 flex h-[30dvh] w-full flex-col justify-between bg-white text-gray-900">
         <div className="mx-auto flex h-full w-[95%] justify-between">
           <div className="flex flex-col justify-between py-4">
             <div>
               <p className="font-bold">KHH SECCO</p>
             </div>
-            <p className="text-zinc-500">welcome to KHH SECCO-SORB</p>
+            <p className="text-gray-500">welcome to KHH SECCO-SORB</p>
           </div>
           <div className="flex items-start py-4">
             <nav className="flex space-x-6">
@@ -94,7 +94,7 @@ const HeroLayout = () => {
                 dark / <span className="font-semibold">light</span>
               </a>
             </div>
-            <p className="text-zinc-500">
+            <p className="text-gray-500">
               delivers innovative, high-quality solutions that bring projects to
               life ↓
             </p>

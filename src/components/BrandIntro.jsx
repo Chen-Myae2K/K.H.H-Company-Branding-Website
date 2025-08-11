@@ -54,37 +54,37 @@ const BrandIntro = () => {
           {imageList.map((item) => (
             <div
               key={item.id}
-              className="col-span-1 h-[150px] flex border border-zinc-200 justify-center duration-300 grayscale hover:grayscale-0 hover:bg-surface items-center py-5"
+              className="col-span-1 h-[150px] flex border border-gray-200 justify-center duration-300 grayscale hover:grayscale-0 hover:bg-surface items-center py-5"
             >
               <img src={item.src} className="w-[120px] " alt="" />
             </div>
           ))}
         </div>
         <div>
-          <h4 className="text-center pt-10 font-semibold text-zinc-500">
+          <h4 className="text-center pt-10 font-semibold text-gray-500">
             Truted by fast-growing startups
           </h4>
         </div>
       </div>
       <div className="mt-10">
         <div className="grid grid-cols-1 hover:bg-surface bg-white duration-300 lg:grid-cols-3  ">
-          <div className="lg:col-span-2 group border border-zinc-200 duration-300 flex flex-col justify-between px-[4%] py-10">
+          <div className="lg:col-span-2 group border border-gray-200 duration-300 flex flex-col justify-between px-[3%] lg:px-[4%] py-10">
             <div className="flex justify-between items-center">
-              <h2 className="duration-300 text-3xl text-zinc-800 group-hover:text-primary">
+              <h2 className="duration-300 text-3xl text-gray-800 group-hover:text-royal">
                 Innovation
               </h2>
               <MoveRight
                 strokeWidth={0.5}
-                className="size-10 duration-300 group-hover:text-primary text-zinc-800"
+                className="size-10 duration-300 group-hover:text-royal text-gray-800"
               />
             </div>
-            <p className="text-zinc-600 max-w-md">
+            <p className="text-gray-600 max-w-md">
               We develop the technologies of the future – to benefit both you
               and the planet!
             </p>
           </div>
-          <div className="lg:col-span-1 border border-zinc-200 bg-primary hover:bg-primary/95 duration-200 flex flex-col  ">
-            <div className="text-white px-[4%] py-10 flex flex-col gap-5 justify-between items-start">
+          <div className="lg:col-span-1 border border-gray-200 bg-royal hover:bg-royal/95 duration-200 flex flex-col  ">
+            <div className="text-white px-[3%] lg:px-[4%] py-10 flex flex-col gap-5 justify-between items-start">
               <div className="text-2xl">Desiccants</div>
               <p>
                 Desiccants are moisture-absorbing agents that protect products
@@ -99,9 +99,9 @@ const BrandIntro = () => {
       <div className="">
         <div className="grid grid-cols-1  hover:bg-surface duration-300 bg-white lg:grid-cols-3  ">
           {noteList.map((item) => (
-            <div key={item.id} className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-zinc-200 px-[7%] py-5 flex flex-col  ">
-              <div className="text-zinc-900/80 gap-5 justify-between py-5 flex flex-col  items-start">
-                <div className="text-sm group-hover:text-primary font-semibold tracking-wide flex items-center uppercase space-x-2">
+            <div key={item.id} className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-gray-200 px-[3%] lg:px-[7%] py-5 flex flex-col  ">
+              <div className="text-gray-900/80 gap-5 justify-between py-5 flex flex-col  items-start">
+                <div className="text-sm group-hover:text-royal font-semibold tracking-wide flex items-center uppercase space-x-2">
                   {item.icon}
                   <p>{item.title}</p>
                 </div>

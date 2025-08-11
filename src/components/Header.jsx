@@ -25,7 +25,7 @@ const Header = () => {
       <header className="fixed top-0 left-0 w-full z-50 font-inter">
         <nav className="bg-white py-3">
           <div className="mx-auto w-[95%]  flex justify-between items-center">
-            <a href="#" className="flex justify-center items-center text-zinc-800">
+            <a href="#" className="flex justify-center items-center text-gray-800">
               <img src={logo} className="w-[70px]" alt="KHH loho" />
              
             </a>
@@ -40,8 +40,8 @@ const Header = () => {
                   className={`px-3 py-2 transition-colors cursor-pointer
                   ${
                     item.current
-                      ? "text-primary"
-                      : "text-zinc-400 hover:text-zinc-800"
+                      ? "text-royal"
+                      : "text-gray-400 hover:text-gray-800"
                   }
                 `}
                   aria-current={item.current ? "page" : undefined}

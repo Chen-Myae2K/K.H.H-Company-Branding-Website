@@ -69,13 +69,13 @@ const HeroLayout = () => {
           </div>
         </div>
 
-        <div className="flex h-[20vh] w-[95%]  mx-auto pt-5 flex-col justify-between bg-white text-zinc-800">
+        <div className="flex h-[20vh] w-[95%]  mx-auto pt-5 flex-col justify-between bg-white text-gray-800">
           <div className="flex h-full w-full justify-between">
             <div className="flex flex-col justify-between">
               <div>
-                <p className="font-bold text-primary">K.H.H Company Limited</p>
+                <p className="font-bold text-royal">K.H.H Company Limited</p>
               </div>
-              <p className="text-zinc-500">Welcome to KHH SECCO-SORB</p>
+              <p className="text-gray-500">Welcome to KHH SECCO-SORB</p>
             </div>
 
             <div className="flex flex-col items-end  justify-between text-right">
@@ -84,7 +84,7 @@ const HeroLayout = () => {
                   dark / <span className="font-semibold">light</span>
                 </a>
               </div>
-              <p className="text-zinc-500">
+              <p className="text-gray-500">
                 delivers innovative, high-quality solutions that bring projects
                 to life ↓
               </p>
