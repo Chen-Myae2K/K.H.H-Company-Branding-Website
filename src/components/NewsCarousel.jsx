@@ -1,136 +1,128 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-
-// --- Component Starts Here ---
+import React, { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import certificate1 from "../assets/home/certificate_1.png";
+import certificate2 from "../assets/home/certificate_2.png";
+import certificate3 from "../assets/home/certificate_3.png";
+import certificate4 from "../assets/home/certificate_4.png";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const NewsCarousel = () => {
-  // Define your news items here
   const newsItems = [
     {
-      image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600',
-      title: 'MAG machines GmbH is now part of the K industries group',
-      date: 'NEWS · 2025-04-08',
+      image: certificate1,
+      title: "Good Hygiene Practices (GHP)",
+      context:
+        "This certificate confirms that K.H.H. Company Limited has been assessed and found to be in accordance with the standard requirements for Good Hygiene Practices (GHP). The certification applies to the Processing of moisture and humidity control products including silica gels and powder desiccants.",
     },
     {
-      image: 'https://images.unsplash.com/photo-1616400619579-267838531a19?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600',
-      title: '6 good reasons to choose for a MAG honeycomb catalyst',
-      date: 'NEWS · 2023-07-12',
+      image: certificate2,
+      title: "KHH Company Limited – Officially Incorporated in Myanmar",
+      context:
+        "KHH Company Limited was officially incorporated under the Myanmar Companies Act 1914 on 22 November 2016 as a Private Company Limited by Shares. Registered with the Directorate of Investment and Company Administration (DICA), KHH is committed to delivering quality products and services with professionalism, trust, and innovation.",
     },
     {
-      image: 'https://images.unsplash.com/photo-1554224155-1696413565d3?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600',
-      title: 'Our MAG sales network is strengthened: Unitek Japan K.K takes over sales',
-      date: 'NEWS · 2023-06-07',
+      image: certificate3,
+      title: "ISO 14001:2015 Certified – Environmental Management Excellence",
+      context:
+        "KHH Company Limited is proudly certified to ISO 14001:2015 for its Environmental Management System, covering the manufacturing of silica gels and powder desiccants. This certification reflects our commitment to sustainable practices, environmental responsibility, and delivering high-quality products while minimizing our ecological footprint in every stage of production.",
     },
     {
-      image: 'https://images.unsplash.com/photo-1517976487612-6a7f2f45811f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600',
-      title: 'New HPW plant in Garsten, Austria relies on technology from MAG',
-      date: 'NEWS · 2023-05-23',
+      image: certificate4,
+      title: "Certificate of Registration - ISO 22000:2018",
+      context:
+        "This certificate confirms that K.H.H. Company Limited has been assessed and found to conform to the requirements of ISO 22000:2018. The certification covers the Processing of Humidity and Moisture Control Products (Silica Gels and Powder Desiccants) used in Food & Pharmaceutical Packaging (Category - I). This demonstrates the company's commitment to maintaining a robust Food Safety Management System.",
     },
   ];
-  
+
   const AUTOPLAY_DELAY = 5000;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: true, 
-      align: 'start' 
+    {
+      loop: true,
+      align: "start",
     },
-    [Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true })] // Stop autoplay on interaction
+    [Autoplay({ delay: AUTOPLAY_DELAY, stopOnInteraction: true })]
   );
-  
-  const [progress, setProgress] = useState(0);
-  
-  // --- NEW: State for button enabled/disabled status ---
+
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
-  // --- NEW: Callback functions for scrolling ---
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  );
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  );
 
-  // --- NEW: Logic to update button disabled state on slide change ---
   const onSelect = useCallback((emblaApi) => {
     setPrevBtnDisabled(!emblaApi.canScrollPrev());
     setNextBtnDisabled(!emblaApi.canScrollNext());
   }, []);
 
+  const onScroll = useCallback((emblaApi) => {
+    const progress = Math.max(0, Math.min(1, emblaApi.scrollProgress()));
+    setScrollProgress(progress * 100);
+  }, []);
+
   useEffect(() => {
     if (!emblaApi) return;
-    
-    // Update button states on init and select
+
     onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
+    onScroll(emblaApi);
 
-    // Logic for the autoplay progress bar
-    const timer = setInterval(() => {
-      // Check if autoplay is running before updating progress
-      if (emblaApi.plugins()?.autoplay?.isPlaying()) {
-        const progress = emblaApi.plugins().autoplay.measureProgress();
-        setProgress(progress * 100);
-      }
-    }, 120);
-
-    return () => {
-      clearInterval(timer);
-      emblaApi.off('reInit', onSelect);
-      emblaApi.off('select', onSelect);
-    };
-  }, [emblaApi, onSelect]);
-
+    emblaApi.on("select", onSelect);
+    emblaApi.on("scroll", onScroll);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("reInit", onScroll);
+  }, [emblaApi, onSelect, onScroll]);
 
   return (
-    <section className="bg-white w-full">
+    <section className="bg-white w-full ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* --- MODIFIED: Header with title and buttons --- */}
         <div className="flex justify-between items-center mb-8">
-            <h2 className="text-sm font-semibold tracking-widest uppercase text-gray-500">NEWS</h2>
-            <div className="flex space-x-2">
-                <button 
-                    onClick={scrollPrev} 
-                    disabled={prevBtnDisabled}
-                    aria-label="Previous slide"
-                    className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
-                >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
-                </button>
-                <button 
-                    onClick={scrollNext} 
-                    disabled={nextBtnDisabled}
-                    aria-label="Next slide"
-                    className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
-                >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
-            </div>
+          <h2 className="text-3xl">Awards & Certificates</h2>
+          <div className="flex space-x-2">
+            <button
+              onClick={scrollPrev}
+              disabled={prevBtnDisabled}
+              aria-label="Previous slide"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
+            >
+              <ChevronLeft strokeWidth={1} />
+            </button>
+            <button
+              onClick={scrollNext}
+              disabled={nextBtnDisabled}
+              aria-label="Next slide"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
+            >
+              <ChevronRight strokeWidth={1} />
+            </button>
+          </div>
         </div>
-        
-        {/* Embla Carousel Structure */}
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex -ml-4">
             {newsItems.map((item, index) => (
-              <div 
-                className="flex-shrink-0 w-full md:w-1/2 min-w-0 pl-4" 
+              <div
+                className="flex-shrink-0 w-full md:w-1/2 min-w-0 pr-10"
                 key={index}
               >
-                <div className="group cursor-pointer">
-                  <div className="overflow-hidden mb-4">
+                <div className="group cursor-pointer flex flex-col sm:flex-row gap-8 items-stretch">
+                  <div className="w-full sm:w-1/2 flex-shrink-0">
                     <img
                       src={item.image}
+                      className="border border-zinc-200 w-full h-full object-contain"
                       alt={item.title}
-                      className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                   </div>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-lg font-medium text-gray-800 group-hover:text-blue-600 transition-colors duration-200">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-gray-500 mt-2">{item.date}</p>
-                    </div>
-                    <svg className="w-6 h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transform transition-all duration-300 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                  <div className="flex flex-col justify-between ">
+                    <p className="text-xl">{item.title}</p>
+                    <p className="text-gray-800/80 text-sm">{item.context}</p>
                   </div>
                 </div>
               </div>
@@ -138,11 +130,10 @@ const NewsCarousel = () => {
           </div>
         </div>
 
-        {/* Progress Bar */}
-        <div className="relative w-full h-0.5 bg-gray-200 mt-12">
-          <div 
+        <div className="relative w-full h-0.5 bg-gray-100 mt-12">
+          <div
             className="absolute top-0 left-0 h-full bg-blue-500"
-            style={{ width: `${progress}%` }}
+            style={{ width: `${scrollProgress}%` }}
           ></div>
         </div>
       </div>

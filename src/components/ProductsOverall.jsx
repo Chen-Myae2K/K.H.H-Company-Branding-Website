@@ -84,7 +84,7 @@ const ProductsOverall = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        <div className="col-span-2 bg-white hover:bg-surface duration-300 border border-zinc-100 flex items-center justify-center">
+        <div className="col-span-2 bg-white hover:bg-surface duration-300 border border-gray-200 flex items-center justify-center">
           <img src={productionLine} className="" alt="" />
         </div>
         <div className="col-span-1">

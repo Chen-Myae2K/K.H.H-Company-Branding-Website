@@ -6,6 +6,7 @@ import ProductsOverall from "../components/ProductsOverall";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import CertificateDisplay from "@/components/CertificateDisplay";
+import Testimonials from "@/components/Testimonials";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <BrandIntro />
       <ProductsOverall />
       <CertificateDisplay />
+      <Testimonials />
       <Faq />
       <Footer />
     </main>
