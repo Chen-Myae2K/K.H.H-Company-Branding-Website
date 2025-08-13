@@ -38,7 +38,7 @@ const BrandIntro = () => {
     <section>
       <div className="">
         <div className="grid grid-cols-1 hover:bg-surface bg-white duration-300 lg:grid-cols-3  ">
-          <div className="lg:col-span-2 group border border-gray-100 duration-300 flex flex-col justify-between px-[3%] lg:px-[4%] py-10">
+          <div className="lg:col-span-2 group border border-gray-200 border-l-accent duration-300 flex flex-col justify-between px-[3%] lg:px-[4%] py-10">
             <div className="flex justify-between items-center">
               <h2 className="duration-300 text-3xl text-gray-800 group-hover:text-royal">
                 Innovation
@@ -53,7 +53,7 @@ const BrandIntro = () => {
               and the planet!
             </p>
           </div>
-          <div className="lg:col-span-1 border border-gray-100 bg-royal hover:bg-royal/95 duration-200 flex flex-col  ">
+          <div className="lg:col-span-1 border border-gray-200 border-l-accent bg-royal hover:bg-royal/95 duration-200 flex flex-col  ">
             <div className="text-white px-[3%] lg:px-[4%] py-10 flex flex-col gap-5 justify-between items-start">
               <div className="text-2xl">Desiccants</div>
               <p>
@@ -69,7 +69,7 @@ const BrandIntro = () => {
       <div className="">
         <div className="grid grid-cols-1  hover:bg-surface duration-300 bg-white lg:grid-cols-3  ">
           {noteList.map((item) => (
-            <div key={item.id} className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-gray-100 px-[3%] lg:px-[7%] py-5 flex flex-col  ">
+            <div key={item.id} className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-gray-200 border-l-accent  px-[3%] lg:px-[7%] py-5 flex flex-col  ">
               <div className="text-gray-900/80 gap-5 justify-between py-5 flex flex-col  items-start">
                 <div className="text-sm group-hover:text-royal font-semibold tracking-wide flex items-center uppercase space-x-2">
                   {item.icon}

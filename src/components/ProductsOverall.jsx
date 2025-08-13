@@ -47,7 +47,7 @@ const ProductsOverall = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="col-span-1 max-lg:gap-10 bg-white hover:bg-surface duration-300 px-[4%] py-5 flex flex-col justify-between border group border-gray-100 ">
+        <div className="col-span-1 max-lg:gap-10 bg-white hover:bg-surface duration-300 px-[4%] py-5 flex flex-col justify-between border group border-gray-200 border-l-accent ">
           <div className="flex justify-between items-center">
             <h2 className="duration-300 text-3xl text-gray-800 group-hover:text-royal">
               Manufacturing
@@ -70,7 +70,7 @@ const ProductsOverall = () => {
           {noteList.map((item) => (
             <div
               key={item.id}
-              className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-gray-100 px-[3%] lg:px-[7%] py-5 flex flex-col  "
+              className="lg:col-span-1 bg-white group hover:bg-surface duration-300 border border-gray-200 border-l-accent px-[3%] lg:px-[7%] py-5 flex flex-col  "
             >
               <div className="text-gray-900/80 gap-5 justify-between py-5 flex flex-col  items-start">
                 <div className="text-sm group-hover:text-royal font-semibold tracking-wide flex items-center uppercase space-x-2">
@@ -84,7 +84,7 @@ const ProductsOverall = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        <div className="col-span-2 bg-white hover:bg-surface duration-300 border border-gray-100 flex items-center justify-center">
+        <div className="col-span-2 bg-white hover:bg-surface duration-300 border border-gray-200 border-l-accent flex items-center justify-center">
           <img src={productionLine} className="" alt="" />
         </div>
         <div className="col-span-1">

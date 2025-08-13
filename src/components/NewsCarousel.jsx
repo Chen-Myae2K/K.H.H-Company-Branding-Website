@@ -91,7 +91,7 @@ const NewsCarousel = () => {
               onClick={scrollPrev}
               disabled={prevBtnDisabled}
               aria-label="Previous slide"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-100 text-gray-800 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 border-l-accent text-gray-800 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
             >
               <ChevronLeft strokeWidth={1} />
             </button>
@@ -99,7 +99,7 @@ const NewsCarousel = () => {
               onClick={scrollNext}
               disabled={nextBtnDisabled}
               aria-label="Next slide"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-100 text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
+              className="w-9 h-9 flex items-center justify-center rounded-full border border-gray-200 border-l-accent text-gray-700 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition"
             >
               <ChevronRight strokeWidth={1} />
             </button>

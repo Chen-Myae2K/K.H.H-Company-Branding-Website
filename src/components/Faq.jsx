@@ -44,7 +44,7 @@ const Faq = () => {
     },
   ];
   return (
-    <div className="bg-surface mt-20 pb-10 border border-gray-100">
+    <div className="bg-surface mt-20 pb-10 border border-gray-200 border-l-accent">
       <div className="flex flex-col justify-center items-center gap-5 text-center py-10">
         <h2 className="text-3xl w-2/3 text-royal">
           Frequently Asked Questions

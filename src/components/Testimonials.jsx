@@ -26,7 +26,7 @@ const Testimonials = () => {
         {imageList.map((item) => (
           <div
             key={item.id}
-            className="col-span-1 h-[150px] flex border border-gray-100 justify-center duration-300 grayscale hover:grayscale-0 hover:bg-surface items-center py-5"
+            className="col-span-1 h-[150px] flex border border-gray-200 border-l-accent justify-center duration-300 grayscale hover:grayscale-0 hover:bg-surface items-center py-5"
           >
             <img src={item.src} className="w-[120px] " alt="" />
           </div>

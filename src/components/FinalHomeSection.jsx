@@ -16,7 +16,7 @@ const FinalHomeSection = () => {
           alt=""
         />
       </div>
-      <div className="md:col-span-2 bg-white group hover:bg-surface duration-300 border border-gray-100 px-[3%] md:px-[5%] py-5 flex flex-col  ">
+      <div className="md:col-span-2 bg-white group hover:bg-surface duration-300 border border-gray-200 border-l-accent px-[3%] md:px-[5%] py-5 flex flex-col  ">
         <div className="text-gray-900/80 gap-5 justify-between  flex flex-col  items-start h-full">
           <div className="flex w-full justify-between items-center">
             <h2 className="duration-300 text-3xl text-gray-800 group-hover:text-royal">
@@ -34,12 +34,16 @@ const FinalHomeSection = () => {
           </p>
         </div>
       </div>
-      <div className="md:col-span-1 bg-white group duration-300 border border-gray-100 px-[3%] md:px-[7%] py-5 flex flex-col  ">
-        <div className="text-gray-900/80 gap-5 justify-between py-5 flex flex-col  items-start">
-          <div className="text-sm group-hover:text-royal font-semibold tracking-wide flex items-center uppercase space-x-2">
-            <p>df</p>
+      <div className="md:col-span-1 bg-white group duration-300 border border-gray-200 border-l-accent px-[3%] md:px-[7%] py-5 flex flex-col  ">
+        <div className="text-gray-900/80 gap-5 justify-between  items-stretch h-full flex flex-col">
+          <div className="text-sm  font-semibold tracking-wide flex items-center uppercase space-x-2">
+            <p className="bg-royal inline px-3 py-1 text-white">built for today and ready for tomorrow</p>
           </div>
-          <p>f</p>
+          <p className="text-gray-800/80">
+            Our commitment to quality and forward-thinking design ensures that
+            every product we deliver is reliable, efficient, and built to
+            perform in real-world applications.
+          </p>
         </div>
       </div>
     </div>
